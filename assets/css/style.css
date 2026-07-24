@@ -1,0 +1,584 @@
+@font-face {
+  font-family: "BalooRegular";
+  src: url("../../fonts/Baloo Regular 400.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "PassionOneRegular";
+  src: url("../../fonts/PassionOne-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "ConcertOne";
+  src: url("../../fonts/concertone-regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: "ITFDevanagari";
+  src: url("../../fonts/ITFDevanagari.ttc") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "NotoSansGujaratiRegular";
+  src: url("../../fonts/NotoSansGujarati-Regular.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  width: 100vw !important;
+  height: 100%;
+  background-image: url("../images/bg-image.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  overflow-x: hidden;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+  padding: 2vw;
+}
+
+body[data-lang="hi"] {
+  font-family: "ITFDevanagari"!important;
+  font-weight: 700!important;
+}
+
+body[data-lang="gu"] {
+  font-family: "NotoSansGujaratiRegular"!important;
+  font-weight: 700!important;
+}
+
+
+.home-btn {
+  position: fixed;
+  top: 2.5vw;
+  left: 4%;
+  width: 3.5vw;
+  height: 3vw;
+  padding: 0.5vw;
+  background-color: white;
+  z-index: 1000;
+  cursor: pointer;
+  border-radius: 0.5vw;
+  opacity: 0.5;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.home-btn:hover {
+  transform: scale(1.15);
+  opacity: 1;
+}
+
+.home-btn img {
+  width: 100%;
+  display: block;
+}
+
+/* Tooltip */
+.home-btn::after {
+  content: "Home";
+  position: absolute;
+  top: 130%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ff9100;
+  font-size: 1vw;
+  font-family: "BalooRegular", sans-serif;
+  padding: 0.2vw;
+  border-radius: 0.4vw;
+  white-space: nowrap;
+
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, top 0.25s ease;
+  pointer-events: none;
+}
+
+.home-btn:hover::after {
+  opacity: 1;
+  visibility: visible;
+  top: 130%;
+}
+
+.language-container {
+  position: fixed;
+  top: 2.5vw;
+  right: 5%;
+  display: flex;
+  width: 9vw;
+  padding: 0.2vw 0.3vw;
+  height: auto;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "BalooRegular";
+  border: 0.2vw solid white;
+  background-color: transparent;
+  border-radius: 50vw;
+  pointer-events: auto;
+  z-index: 1000;
+}
+
+.language-container div {
+  width: 2.5vw;
+  height: 2.5vw;
+  font-size: 1.6vw;
+  text-align: center;
+  border: 0.2vw solid white;
+  background: transparent !important;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-family: "BalooRegular", sans-serif;
+}
+
+.language-container div:hover {
+  /* border: 0.3vw solid #A60B0B;  */
+  background-color: #A60B0B !important;
+  color: white;
+}
+
+.language-container div.active {
+  background-color: #A60B0B !important;
+  color: white;
+  /* border: 0.3vw solid #A60B0B; */
+}
+
+.pranam-container {
+  position: absolute;
+  width: 45vw;
+  height: auto;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pranam-container>.pranam-img {
+  position: relative;
+  width: 85%;
+  height: auto;
+  display: block;
+}
+
+.pranam-container>.pranam-img>img {
+  width: 100%;
+  display: block;
+}
+
+.pranam-img span {
+  z-index: 15;
+  position: absolute;
+  top: 17%;
+  left: 50%;
+  font-size: 3.4vw;
+  transform: translateX(-50%);
+  font-family: "BalooRegular";
+  color: #802922;
+}
+
+.pranam-container .home-btn-1 {
+  position: absolute;
+  top: 88%;
+  left: 50%;
+  transform: translateX(-50%) scale(1);
+  width: 15vw;
+  height: auto;
+  transition: transform 0.2s ease;
+  transform-origin: center center;
+}
+
+.pranam-container .home-btn-1:hover {
+  transform: translateX(-50%) scale(1.05);
+}
+
+
+.pranam-container .home-btn-1 img {
+  width: 100%;
+  display: block;
+}
+
+.home-btn-1 span {
+  width: 8vw;
+  z-index: 15;
+  position: absolute;
+  top: 50%;
+  left: 38%;
+  font-size: 2.5vw;
+  transform: translateY(-50%);
+  font-family: "BalooRegular";
+  color: #821b00;
+  text-align: center;
+}
+
+.back-btn {
+  position: absolute;
+  left: 4%;
+  top: 4%;
+  width: 3vw;
+  height: 3vw;
+  background-color: #A60B0B;
+  border: 0.25vw solid white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  transform: scale(1);
+  transition: transform 0.3s ease;
+  z-index: 50;
+}
+
+.back-btn i {
+  color: white;
+  font-size: 1vw;
+  transition: font-size 0.3s ease;
+}
+
+.back-btn:hover {
+  transform: scale(1.05);
+  background-color: white;
+}
+
+.back-btn:hover i {
+  font-size: 1.2vw;
+  color: #A60B0B !important;
+}
+
+main {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.259);
+  border: 0.1vw solid white;
+  border-radius: 2vw;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-img img {
+  width: 100%;
+  display: block;
+}
+
+.page-title {
+  position: fixed;
+  bottom: 8%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 40vw;
+  height: 10vw;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  z-index: 10000;
+  transition: opacity 3s ease;
+
+  background: #faa12c56;
+  border: 0.2vw solid rgba(255, 255, 255, 0.28);
+  border-radius: 2.5vw;
+
+  backdrop-filter: blur(0.2vw);
+  -webkit-backdrop-filter: blur(0.5vw);
+  text-decoration: none;
+  transition: background 0.3s ease-in;
+}
+
+.page-title span {
+  font-size: 8vw;
+  text-align: center;
+  color: white;
+  font-family: "PassionOneRegular";
+  display: block;
+  /* font-weight: bolder !important; */
+}
+
+.page-title:hover {
+  background-color: #A60B0B;
+}
+
+.topics {
+  position: relative;
+  width: 90%;
+  height: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2vw;
+  padding-top: 13vw;
+}
+
+.topics .card {
+  width: 30%;
+  height: auto;
+  display: block;
+  position: relative;
+  opacity: 0.3;
+  transition: opacity 0.3s ease;
+
+}
+
+.topics .card img {
+  width: 100%;
+  display: block;
+  border-radius: 1vw;
+  transition: transform 0.3s ease;
+}
+
+.topics .card span {
+  border: 0.2vw solid white;
+  border-radius: 1vw;
+  width: 17vw;
+  background-color: rgba(255, 255, 255, 0.211);
+  position: absolute;
+  bottom: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2.2vw;
+  padding: 1.3vw 0.4vw;
+  color: white;
+  text-align: center;
+  font-family: "BalooRegular";
+  text-shadow: 0.1vw 0.1vw 0.2vw rgba(0, 0, 0, 0.7);
+  font-family: "PassionOneRegular";
+  backdrop-filter: blur(0.1vw);
+  -webkit-backdrop-filter: blur(0.1vw);
+  opacity: 0;
+  transition: opacity 1.5s ease;
+}
+
+.topics .card:hover,
+.topics .card:hover span {
+  opacity: 1;
+}
+
+.pages {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 10%;
+  height: 15vw;
+  right: 0;
+  top:50%;
+  transform:translateY(-50%)
+}
+
+.pages .page {
+  width: 4vw;
+  height: 4vw;
+  background-color: #e6712b;
+  border-radius: 50%;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 2.5vw;
+  border: 0.2vw solid white;
+  font-family: "ConcertOne";
+  transition: background-color 0.3s ease;
+}
+
+.pages .page:hover {
+  background-color: #A60B0B;
+}
+
+.pages .page.active{
+ background-color: #A60B0B; 
+}
+
+.swiper-container{
+  width: 100%;
+  height: 100%;
+}
+
+.hero-swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.hero-swiper .swiper-wrapper,
+.hero-swiper .swiper-slide {
+  width: 100%;
+  height: 100%;
+}
+
+.hero-swiper .swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-video {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+.hero-bottom-content {
+  position: absolute;
+  bottom: 2vw;
+  left: 50%;
+  transform: translateX(-50%);
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-caption {
+  width: 55vw!important;
+  word-wrap: break-word;
+  height: auto;
+  padding: 2vw 2vw!important;
+  background: #e58d2a;
+  border: 0.2vw solid white;
+  color: white;
+  font-size: 2.2vw;
+  text-align: center;
+  border-radius: 2vw;
+  line-height: 1;
+  font-family: "ConcertOne";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  white-space: wrap;
+  box-shadow: 0.2vw 0.4vw 0.2vw rgba(0, 0, 0, 0.7);
+}
+
+body[data-lang="hi"] .hero-caption{
+  font-size: 1.6vw!important;
+  line-height: 2.2vw;
+
+}
+
+body[data-lang="gu"] .hero-caption {
+ font-size: 1.6vw!important;
+ line-height: 2.2vw;
+}
+
+.hero-caption .swiper-wrapper .swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.3vw;
+  flex-direction: column;
+}
+
+.hero-caption .swiper-wrapper{
+  height: 3vw!important;
+}
+
+.hero-nav {
+  width: 4vw;
+  height: 4vw;
+  border: none;
+  border-radius: 50%;
+  color: #802922;
+  font-size: 1.8vw;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  flex-shrink: 0;
+  opacity: 0.8;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.hero-nav img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.hero-next{
+  position: absolute;
+  right: 20vw;
+  top: 45%;
+  transform: translateY(-50%) scale(1);
+}
+
+.hero-prev{
+  position: absolute;
+  left: 20vw;
+  top: 45%;
+  transform: translateY(-50%) scale(1);
+}
+.hero-nav:hover {
+  transform: translateY(-50%) scale(1.08);
+  opacity: 1;
+}
+
+.swiper-title {
+  position: absolute;
+  top: -40%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 18vw;
+  background-color: #c06700;
+  text-align: center;
+  padding: 0.5vw 1vw;
+  border: 0.2vw solid white;
+  border-radius: 3vw;
+  font-family: "ConcertOne";
+  color: white;
+  font-size: 1.5vw;
+  z-index: 1000;
+}
+
+
+.sub-title {
+  font-size: 1.4vw;
+  color: #A60B0B
+}
+
+/* #e6712b */
+
+/* #c06700 */
+
+/* #e58d2a */
