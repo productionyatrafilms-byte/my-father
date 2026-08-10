@@ -431,19 +431,36 @@ body[data-lang="gu"] .start-text {
         text-decoration: none;
 
         transition: background 0.3s ease-in;
-        animation: pageTitlePop 1.5s ease-in-out infinite;
-        transform-origin: center;
+     
       }
+.page-title::after {
+  content: "Click Here";
+  position: absolute;
+  left: 50%;
+  bottom: 0vw;
+  font-family: "PassionOneRegular";
+  font-size: 1.2vw;
+  color: #ffffff;
+  letter-spacing: 0.08vw;
+  white-space: nowrap;
+  background: rgba(166, 11, 11, 0.9);
+  padding: 0.3vw 0.9vw;
+  border-radius: 2vw;
+  text-shadow: 0 0.1vw 0.3vw rgba(0, 0, 0, 0.4);
+  animation: clickHint 1.5s ease-in-out infinite;
+}
 
-      @keyframes pageTitlePop {
-        0%,
-        100% {
-          transform: translateX(-50%) scale(1);
-        }
-        50% {
-          transform: translateX(-50%) scale(1.05);
-        }
-      }
+@keyframes clickHint {
+  0%,
+  100% {
+    transform: translate(-50%, 0);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translate(-50%, -0.4vw);
+    opacity: 1;
+  }
+}
     </style>
   </head>
 
