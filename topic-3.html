@@ -7,14 +7,11 @@
   <title data-lang-key="title-3"></title>
 
   <link rel="stylesheet" href="./assets/css/style.css" />
-    <link
-      rel="stylesheet"
-      href="./assets/css/swiper-bundle.min.css"
-    />
+  <link rel="stylesheet" href="./assets/css/swiper-bundle.min.css" />
   <style>
     .hero-img {
       position: absolute;
-  width: 45vw;
+      width: 45vw;
       height: 25vw;
       display: flex;
       justify-content: center;
@@ -70,72 +67,71 @@
     }
 
     .pranam-link {
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    right: 3vw;
-    bottom: 3vw;
-    width: 9vw;
-    height: auto;
-    text-decoration: none;
-    z-index: 9999;
-    pointer-events: none;
-    cursor: pointer;
-    animation: pranamPop 1.2s ease-in-out infinite;
-    transform-origin: center;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.4s ease;
-  }
-    
-.pranam-link img {
-  position: relative;
-  width: 100%;
-  display: block;
-  object-fit: contain;
-}
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      right: 3vw;
+      bottom: 3vw;
+      width: 9vw;
+      height: auto;
+      text-decoration: none;
+      z-index: 9999;
+      pointer-events: none;
+      cursor: pointer;
+      animation: pranamPop 1.2s ease-in-out infinite;
+      transform-origin: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.4s ease;
+    }
 
-.pranam-link span {
-  position: absolute;
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
-  font-size: 1.3vw;
-  padding-right: 1vw;
-    font-family: "BalooRegular";
+    .pranam-link img {
+      position: relative;
+      width: 100%;
+      display: block;
+      object-fit: contain;
+    }
 
-}
+    .pranam-link span {
+      position: absolute;
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      font-size: 1.3vw;
+      padding-right: 1vw;
+      font-family: "BalooRegular";
 
-@keyframes pranamPop {
-  0% {
-    transform: scale(1);
-  }
+    }
 
-  50% {
-    transform: scale(1.12);
-  }
-
-  100% {
-    transform: scale(1);
-  }
-}
-
-  .pranam-link.show {
-        opacity: 1;
-        visibility: visible;
-        pointer-events: auto;
+    @keyframes pranamPop {
+      0% {
+        transform: scale(1);
       }
 
+      50% {
+        transform: scale(1.12);
+      }
+
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    .pranam-link.show {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
   </style>
 </head>
 
 <body>
 
-   <a href="pranam.html" class="pranam-link">
-      <img src="./assets/images/arowAsset.png" alt="" />
-      <span data-lang-key="pranam"></span>
-    </a>
+  <a href="pranam.html" class="pranam-link">
+    <img src="./assets/images/arowAsset.png" alt="" />
+    <span data-lang-key="pranam"></span>
+  </a>
 
   <a class="home-button home-btn" href="topics.html" aria-label="Home">
     <img src="./assets/images/home-btn.png" alt="Home" />
@@ -261,9 +257,9 @@
     <a class="page page-3 active" href="topic-3.html" data-lang-key="num-3"></a>
   </div>
 
- <script src="./assets/js/swiper-bundle.min.js"></script>
+  <script src="./assets/js/swiper-bundle.min.js"></script>
   <script src="./assets/js/app.js"></script>
-    <script src="./assets/js/djp.js"></script>
+  <script src="./assets/js/djp.js"></script>
   <script>
     // click sound effects
     const homeBtnClickSound = new Audio("./assets/audio/pop.mp3");
