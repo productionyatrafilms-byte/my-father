@@ -597,12 +597,14 @@ background-image: url("./../images/pranam-bg-1.png");
 
     overflow: hidden;
     padding-right: 2.5vw;
+    z-index: 100;
   }
 
 .pranam-video video {
     width: 90%;
     height: 83%;
     object-fit: cover;
+    z-index: 99999;
 
     /* Very light feather on ALL edges */
     -webkit-mask-image:
