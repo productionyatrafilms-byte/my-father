@@ -112,13 +112,8 @@ function applyLanguage(lang, save = true) {
 window.addEventListener("DOMContentLoaded", () => {
   const savedLang = localStorage.getItem(LANG_KEY) || DEFAULT_LANG;
 
-  fetch("./assets/json/data.json", { cache: "no-store" })
-    .then((res) => res.json())
-    .then((data) => {
-      translations = data;
-      applyLanguage(savedLang, false);
-    })
-    .catch((err) => console.error("Error loading translations:", err));
+  translations = translationsData;
+  applyLanguage(savedLang, false);
 });
 
 // button clicks
