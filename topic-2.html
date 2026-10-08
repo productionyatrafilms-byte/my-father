@@ -91,109 +91,109 @@
         <div class="swiper hero-swiper">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
-              <video class="hero-video" autoplay muted loop playsinline>
+              <video class="hero-video" autoplay muted loop playsinline preload="auto">
                 <source src="./assets/videos/2-1.mp4" type="video/mp4" />
               </video>
             </div>
 
             <div class="swiper-slide">
-              <video class="hero-video" autoplay muted loop playsinline>
+              <video class="hero-video" muted loop playsinline preload="none">
                 <source src="./assets/videos/2-2.mp4" type="video/mp4" />
               </video>
             </div>
 
             <div class="swiper-slide">
-              <video class="hero-video" autoplay muted loop playsinline>
+              <video class="hero-video" muted loop playsinline preload="none">
                 <source src="./assets/videos/2-3.mp4" type="video/mp4" />
               </video>
             </div>
 
             <div class="swiper-slide">
-              <video class="hero-video" autoplay muted loop playsinline>
+              <video class="hero-video" muted loop playsinline preload="none">
                 <source src="./assets/videos/2-4.mp4" type="video/mp4" />
               </video>
             </div>
 
             <div class="swiper-slide">
-              <video class="hero-video" autoplay muted loop playsinline>
+              <video class="hero-video" muted loop playsinline preload="none">
                 <source src="./assets/videos/2-5.mp4" type="video/mp4" />
               </video>
             </div>
 
             <div class="swiper-slide">
-              <video class="hero-video" autoplay muted loop playsinline>
+              <video class="hero-video" muted loop playsinline preload="none">
                 <source src="./assets/videos/2-6.mp4" type="video/mp4" />
               </video>
             </div>
 
             <div class="swiper-slide">
-              <video class="hero-video" autoplay muted loop playsinline>
+              <video class="hero-video" muted loop playsinline preload="none">
                 <source src="./assets/videos/2-7.mp4" type="video/mp4" />
               </video>
             </div>
 
             <div class="swiper-slide">
-              <video class="hero-video" autoplay muted loop playsinline>
+              <video class="hero-video" muted loop playsinline preload="none">
                 <source src="./assets/videos/2-8.mp4" type="video/mp4" />
               </video>
             </div>
 
             <div class="swiper-slide">
-              <video class="hero-video" autoplay muted loop playsinline>
+              <video class="hero-video" muted loop playsinline preload="none">
                 <source src="./assets/videos/2-9.mp4" type="video/mp4" />
               </video>
             </div>
 
             <div class="swiper-slide">
-              <video class="hero-video" autoplay muted loop playsinline>
+              <video class="hero-video" muted loop playsinline preload="none">
                 <source src="./assets/videos/2-10.mp4" type="video/mp4" />
               </video>
             </div>
 
             <div class="swiper-slide">
-              <video class="hero-video" autoplay muted loop playsinline>
+              <video class="hero-video" muted loop playsinline preload="none">
                 <source src="./assets/videos/2-11.mp4" type="video/mp4" />
               </video>
             </div>
 
             <div class="swiper-slide">
-              <video class="hero-video" autoplay muted loop playsinline>
+              <video class="hero-video" muted loop playsinline preload="none">
                 <source src="./assets/videos/2-12.mp4" type="video/mp4" />
               </video>
             </div>
 
             <div class="swiper-slide">
-              <video class="hero-video" autoplay muted loop playsinline>
+              <video class="hero-video" muted loop playsinline preload="none">
                 <source src="./assets/videos/2-13.mp4" type="video/mp4" />
               </video>
             </div>
 
             <div class="swiper-slide">
-              <video class="hero-video" autoplay muted loop playsinline>
+              <video class="hero-video" muted loop playsinline preload="none">
                 <source src="./assets/videos/2-14.mp4" type="video/mp4" />
               </video>
             </div>
 
             <div class="swiper-slide">
-              <video class="hero-video" autoplay muted loop playsinline>
+              <video class="hero-video" muted loop playsinline preload="none">
                 <source src="./assets/videos/2-15.mp4" type="video/mp4" />
               </video>
             </div>
 
             <div class="swiper-slide">
-              <video class="hero-video" autoplay muted loop playsinline>
+              <video class="hero-video" muted loop playsinline preload="none">
                 <source src="./assets/videos/2-16.mp4" type="video/mp4" />
               </video>
             </div>
 
             <div class="swiper-slide">
-              <video class="hero-video" autoplay muted loop playsinline>
+              <video class="hero-video" muted loop playsinline preload="none">
                 <source src="./assets/videos/2-17.mp4" type="video/mp4" />
               </video>
             </div>
 
             <div class="swiper-slide">
-              <video class="hero-video" autoplay muted loop playsinline>
+              <video class="hero-video" muted loop playsinline preload="none">
                 <source src="./assets/videos/2-18.mp4" type="video/mp4" />
               </video>
             </div>
@@ -317,7 +317,6 @@
   <script src="./assets/js/swiper-bundle.min.js"></script>
   <script src="./assets/js/data.js"></script>
   <script src="./assets/js/app.js"></script>
-  <script src="./assets/js/djp.js"></script>
   <script>
     // click sound effects
     const homeBtnClickSound = new Audio("./assets/audio/pop.mp3");
@@ -363,10 +362,12 @@
 
       videos.forEach((video, index) => {
         if (index === swiper.activeIndex) {
+          video.preload = "auto";
           video.currentTime = 0;
           video.play().catch(() => { });
         } else {
           video.pause();
+          video.preload = "none";
         }
       });
     }

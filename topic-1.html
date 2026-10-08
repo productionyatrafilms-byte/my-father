@@ -92,13 +92,13 @@
         <div class="swiper hero-swiper">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
-              <video class="hero-video" autoplay muted loop playsinline>
+              <video class="hero-video" autoplay muted loop playsinline preload="auto">
                 <source src="./assets/videos/1-1.mp4" type="video/mp4" />
               </video>
             </div>
 
             <div class="swiper-slide">
-              <video class="hero-video" autoplay muted loop playsinline>
+              <video class="hero-video" muted loop playsinline preload="none">
                 <source src="./assets/videos/1-2.mp4" type="video/mp4" />
               </video>
             </div>
@@ -137,7 +137,6 @@
   <script src="./assets/js/swiper-bundle.min.js"></script>
   <script src="./assets/js/data.js"></script>
   <script src="./assets/js/app.js"></script>
-  <script src="./assets/js/djp.js"></script>
   <script>
     // click sound effects
     const homeBtnClickSound = new Audio("./assets/audio/pop.mp3");
@@ -183,10 +182,12 @@
 
       videos.forEach((video, index) => {
         if (index === swiper.activeIndex) {
+          video.preload = "auto";
           video.currentTime = 0;
           video.play().catch(() => { });
         } else {
           video.pause();
+          video.preload = "none";
         }
       });
     }
